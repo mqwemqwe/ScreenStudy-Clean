@@ -1,0 +1,89 @@
+ScreenStudy 1.3.0 — matching and keyword selection
+Validation: 2026-10-20. Linux x86_64 / Python 3.12 / Qt offscreen.
+120 tests passed: 96 existing regression tests + 24 structured-task tests.
+
+New coverage: three matching pairs from the supplied task layout; all six
+paragraphs as one keyword-selection task; literal quote verification, line wraps,
+Unicode normalization, duplicate locations, rejection of invented/non-contiguous
+quotes; contradictory pairs; absent OCR; invalid model schema; bounded previous
+answer context only on explicit references; same-scene retry context preservation;
+one request per task; copied lists; structured explanation payloads; UI controls.
+Fixtures contain supplied task text and simulated model responses, NOT live AI.
+Existing mouse/scene stability, pinning, provider and auth tests remain passing.
+
+Python compilation, Bash syntax, diff whitespace checks: passed.
+Qt sidebar screenshots for matching and keyword selection: visually inspected.
+No additional OCR pass or model call was introduced for initial task solving.
+The output allowance for detected compound tasks is at least 4096 tokens in
+API/Ollama fast mode; actual latency and token use were NOT benchmarked.
+
+NOT RUN: actual Mac ScreenCaptureKit/Vision OCR, screen marker placement on macOS,
+.app packaging, live cloud/local model accuracy or ChatGPT account authentication.
+Word markers indicate OCR ROWS; exact recommended phrases appear in the sidebar.
+Dragging and word selection on the website are manual. No site auto-submission.
+
+ScreenStudy 1.2.1 — stable answers and question lock
+Validation: 2026-10-17. Linux x86_64 / Python 3.12 / Qt offscreen.
+96 tests passed: 25 core/request, 18 HTTP simulator, 30 UI, 7 scene/image,
+16 ChatGPT OAuth/storage/Responses contract tests.
+
+New behavior covered: transient hover/tooltip and OCR-coordinate changes;
+three-observation settling with time gate; single-symbol changes; diagram changes;
+gradual visual drift; card/manual-edit retention through page changes;
+correct source frame for explanations (including queued requests);
+question lock, next question, delayed responses/captures; blank new pages;
+fixed manual snapshots; overlay hiding on scroll, stable re-anchoring and return;
+reuse of the last answered scene without a new automatic model request.
+Image tests use synthetic images and supplied OCR fixtures, NOT native Vision.
+Native mouse/hover capture, actual macOS overlays and app packaging NOT RUN.
+No live model/credential test or token/latency benchmark was performed.
+
+Earlier 1.2.0 validation follows for the preserved provider/authentication code:
+
+ScreenStudy 1.2.0 — Sign in with ChatGPT / subscription mode
+Validation: 2026-10-17
+Environment: Linux x86_64, Python 3.12, PySide6 6.8.3; Qt offscreen.
+
+Python syntax and Bash installer syntax: passed.
+Interface and settings screenshots visually inspected.
+
+77 tests passed: 23 core/request, 18 HTTP integration (local simulator), 20 UI,
+16 ChatGPT OAuth/storage/Responses contract tests (offline fixtures).
+Includes fast vs careful Groq request parameters, required key and endpoint,
+lazy explanation and cache, closed-dialog completion, cropped/limited responses,
+legacy config preservation, new-question scheduling and stale-result rejection.
+HTTP tests use a local simulator, NOT live Groq.
+
+Changes verified in code: capture poll 1000 -> 400 ms; Groq request interval 6 -> 1 s;
+reasoning_effort=none in fast mode; separate explanation request; one question default;
+no coordinate payload to model; no JPEG encoding in text-only mode.
+These are configuration/implementation changes, NOT measured end-to-end speedup.
+
+NOT RUN: macOS .app build, native ScreenCaptureKit/Vision/OCR cache behavior,
+Accessibility paste, overlay window behavior, Keychain, live Groq/model integration.
+These checks require an actual Mac and a configured API key.
+
+1.2.0 NOT RUN: real OpenAI OAuth, account eligibility, live model discovery,
+live Responses inference with a ChatGPT subscription, macOS packaging with PyJWT.
+No user's credentials were used. No latency improvement over Groq is claimed.
+PyJWT 2.15.1 / cryptography 50.0.2 used in Linux validation.
+
+1.2.0 tested: loopback callback, PKCE binding, state rejection, cancellation,
+signed ID-token validation (issuer, audience, nonce, expiry, algorithm/signature),
+missing plan scope, account isolation, atomic private file storage, serial refresh
+and rotation across Manager instances, terminal vs transient refresh errors,
+revocation and offline sign-out warning, current model catalog filtering/order,
+public /v1/responses routing, image inputs, store=false + stream=true,
+response.completed requirement, late usage-limit error and incomplete streams,
+provider switching without reusing an API key, model selection after account change.
+
+Command: python -m unittest discover -s tests -v
+
+1.1.1: explicit honest application User-Agent; bounded HTTP error details;
+credential redaction; distinction between model permissions and Cloudflare 1010;
+copyable plain-text diagnostic field. 403 resolution on the user account NOT verified.
+
+1.1.2: persisted always-on-top preference, visible pin/unpin and minimize buttons.
+Direct Qt offscreen checks: toggle round trip, legacy/default and saved preference,
+window geometry/state, retained answers and observation state, minimize/restore
+in both pin modes. Native macOS stacking order and Dock behavior NOT verified.

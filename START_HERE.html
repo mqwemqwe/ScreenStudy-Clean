@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ScreenStudy — быстрый запуск</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101b27;color:#eaf2f8;font:16px/1.6 -apple-system,BlinkMacSystemFont,Arial,sans-serif}main{max-width:1120px;margin:auto;padding:55px 28px}header{margin-bottom:35px}.tag{color:#78e4c5;letter-spacing:2px;font-size:13px;font-weight:700}h1{font-size:50px;line-height:1.1;margin:15px 0}h2{font-size:24px;margin:0 0 15px}p{color:#b4c5d3}a{color:#83e9ce}code{background:#0c1520;padding:3px 7px;border-radius:5px;color:#e9f8f4;font-size:14px}.grid{display:grid;grid-template-columns:1fr 350px;gap:35px}.card{border:1px solid #2e4356;border-radius:17px;padding:25px;background:#192a3a;margin-bottom:18px}li{margin-bottom:13px}img{width:100%;border-radius:18px;border:1px solid #365169}.small{font-size:13px;color:#a5b9c9}.pill{display:inline-block;background:#78e4c5;color:#142c25;padding:4px 11px;border-radius:20px;font-size:13px;font-weight:700}@media(max-width:800px){.grid{grid-template-columns:1fr}aside{max-width:420px}h1{font-size:38px}}
+</style>
+<main>
+<header><div class="tag">SCREEN / STUDY</div><h1>Вопрос на экране.<br>Ответ и объяснение рядом.</h1><p>Версия 1.3.0 · MacBook M5 · macOS 14+ · ChatGPT, Groq или локальная ИИ</p></header>
+<div class="grid"><section>
+<div class="card"><h2>1. Установите приложение</h2><ol>
+<li>Закройте старую ScreenStudy через ⌘Q. Откройте <code>INSTALL.command</code> из распакованной папки.</li>
+<li>Если система не открывает файл: в Терминале напишите <code>bash </code> с пробелом, перетащите туда INSTALL.command и нажмите Enter.</li>
+<li>Если установщик попросит Python — установите <strong>Python 3.13 для macOS universal2</strong> с <a href="https://www.python.org/downloads/macos/">python.org</a> и повторите установку.</li>
+<li>После сборки откроется ScreenStudy. В дальнейшем запускайте его из домашней папки → Applications или через <code>START.command</code>.</li>
+</ol><p class="small">Архив содержит проект и установщик. Готовое приложение собирается на вашем Mac. При установке нужен интернет.</p></div>
+<div class="card"><span class="pill">Новое: ваша подписка ChatGPT</span><h2>2. Войдите через ChatGPT</h2><ol>
+<li>Нажмите <strong>⚙ → Режим → ChatGPT · моя подписка</strong>.</li>
+<li>Откройте <strong>Войти через ChatGPT / выбрать модель</strong> → <strong>Continue with ChatGPT</strong>.</li>
+<li>В браузере войдите в аккаунт с подходящей подпиской и разрешите ScreenStudy использовать её. Вернитесь в приложение.</li>
+<li>Выберите модель из загруженного списка → <strong>Использовать подписку</strong>.</li>
+<li>Нажмите <strong>Проверить подключение</strong>, затем <strong>Сохранить</strong>. Проверка использует один короткий запрос по подписке.</li>
+</ol><p>Ответы расходуют доступный объём подписки или кредитов. Доступность определяется OpenAI для выбранного аккаунта. Кнопка «Использование ChatGPT» открывает управление лимитами.</p><p>Для скорости выделяйте один вопрос. Для обычного текста оставьте изображение выключенным; для формул и рисунков включите его и выберите модель с поддержкой изображений. Объяснение запрашивается отдельно по <strong>i</strong>.</p><p>Groq, локальная Ollama и другие API сохранены. Инструкция — в <a href="README_RU.md">README_RU.md</a>.</p></div>
+<div class="card"><h2>3. Откройте задание</h2><ol>
+<li>Нажмите «Область…» и разрешите запись экрана в настройках macOS. После выдачи разрешения перезапустите приложение.</li>
+<li>Выделите вопрос вместе с вариантами и рисунками. Нажмите Enter, затем «Наблюдать».</li>
+<li>Ответ появится в боковой карточке. Кнопка <strong>i</strong> открывает объяснение. Галочки обозначают рекомендованные варианты.</li>
+<li><strong>Закрепить вопрос</strong> сохраняет ответ и останавливает автоматические запросы новых заданий. <strong>Следующий вопрос →</strong> возобновляет наблюдение. При движении мыши и прокрутке карточка остаётся доступной; метки на странице могут временно скрываться.</li>
+<li>Для вставки нажмите «Вставить · 3 с» и за три секунды выберите нужное поле. Разрешите «Универсальный доступ» либо используйте обычное копирование и ⌘V.</li>
+<li>Кнопка «Открепить / Закрепить поверх приложений» меняет режим главного окна и запоминает выбор. «Свернуть» сворачивает окно; вернуть его можно через Dock. Наблюдение продолжится, пока вы не нажмёте «Пауза».</li>
+</ol><p class="small">Для начала проверьте простое задание «2 + 2» и вставку в TextEdit. Ответы ИИ могут быть ошибочными.</p></div>
+<p class="small">120 тестов прошли в Linux. Вход, обновление сеанса и ответы ChatGPT проверены на локальных имитаторах. Реальная авторизация OpenAI, доступность подписки вашего аккаунта, ответы модели, захват экрана, OCR и сборка .app требуют проверки на Mac. Скорость настоящей модели здесь не измерялась. В облачном режиме выбранная область или её текст передаётся провайдеру.</p>
+<div class="card"><h2>Сопоставление и ключевые слова</h2><p>Выделите задание целиком, включая обе колонки или все абзацы. Для сопоставления появятся пары <strong>что перенести → куда</strong>. Для выбора слов — точные фразы по абзацам. Значок <strong>i</strong> объясняет решение.</p><p>Номера связывают строки экрана с ответом в карточке. Перетаскивайте карточки и выбирайте слова вручную. Нажмите <strong>Закрепить вопрос</strong>, чтобы сохранить ответ на время работы.</p></div></section><aside><img src="assets/interface.png" alt="Демонстрация бокового окна ScreenStudy с вопросом и рекомендуемым ответом"><p class="small">Пример интерфейса. Это демонстрационные вопросы, не результат захвата вашего экрана.</p><div class="card"><h2>Основные кнопки</h2><p><strong>Наблюдать</strong> — автоматические ответы при смене задания.</p><p><strong>Ответить сейчас</strong> — разовый запрос.</p><p><strong>Закрепить вопрос / Следующий вопрос</strong> — сохранить ответ или продолжить наблюдение.</p><p><strong>Переписать</strong> — изменить формулировку.</p><p><strong>Показать экран</strong> — расширить окно и включить просмотр.</p><p><strong>Пауза</strong> — остановить новые снимки и запросы.</p></div></aside></div>
+</main></html>
